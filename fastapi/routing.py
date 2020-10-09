@@ -598,6 +598,7 @@ class APIRouter(routing.Router):
                     name=route.name,
                     route_class_override=type(route),
                     callbacks=route.callbacks,
+                    **route.extra,
                 )
             elif isinstance(route, routing.Route):
                 self.add_route(
